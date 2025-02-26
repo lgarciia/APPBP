@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Les Calvaires dans l'Orne</title>
+  <link rel="stylesheet" href="INDEX.CSS">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Écran d'accueil / Card d'introduction -->
+  <div class="intro-card" id="introCard">
+    <div class="intro-content">
+      <h2>Bienvenue sur les Calvaires de l'Orne</h2>
+      <p>
+        Cette application répertorie les villes de l'Orne et recense les plus beaux calvaires et monuments religieux des alentours.
+      </p>
+      <button id="closeIntro">Commencer</button>
+    </div>
+  </div>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <button class="menu-btn" id="menuBtn">&#9776;</button>
+    <h1 class="nav-title">LES CALVAIRES dans l'Orne</h1>
+  </nav>
+
+  <!-- Conteneur principal en flex -->
+  <div class="main-container">
+    <!-- Sidebar à gauche -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Les villages disponibles</h2>
+        <button class="close-btn" id="closeSidebar">&times;</button>
+      </div>
+      <ul>
+        <li data-city="Alençon">Alençon</li>
+        <li data-city="Argentan">Argentan</li>
+        <li data-city="Flers">Flers</li>
+        <li data-city="Sées">Sées</li>
+        <li data-city="Tinchebray">Tinchebray</li>
+      </ul>
+    </aside>
+
+    <!-- Zone de la carte à droite -->
+    <section class="map-container">
+      <div id="map"></div>
+      <!-- Welcome overlay visible tant qu'aucune ville n'est sélectionnée -->
+      <div id="welcomeOverlay" class="welcome-overlay">
+        <h2>Bienvenue sur les Calvaires de l'Orne</h2>
+        <p>Sélectionnez une ville dans le menu pour découvrir les plus beaux calvaires et monuments religieux de la région.</p>
+      </div>
+      <!-- Panel d'information pour l'histoire du calvaire d'un village -->
+      <div id="infoPanel" class="info-panel">
+        <button id="closeInfo" class="close-info">&times;</button>
+        <div id="infoContent"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Galerie Modal pour les images de calvaire -->
+  <div id="galleryModal" class="gallery-modal">
+    <span class="close-gallery" id="closeGallery">&times;</span>
+    <div class="gallery-content">
+      <a class="prev" id="prevSlide">&#10094;</a>
+      <img id="galleryImage" src="" alt="Calvaire">
+      <a class="next" id="nextSlide">&#10095;</a>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
